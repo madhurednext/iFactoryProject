@@ -9,72 +9,139 @@
         <script src="cordova.js" type="text/javascript"></script>
         <script src="jquery-mobile/jquery-1.8.2.min.js" type="text/javascript"></script>
         <script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script src="js/hello-world.js" type="text/javascript"></script>
+       <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
+       
+        
+      
+ 
+            <script type="text/javascript" src="lib/jquery.jsonp-2.1.4.min.js"></script>
+            <script type="text/javascript" src="lib/knockout-2.2.0rc.debug.js"></script>
+            <script type="text/javascript" src="lib/iscroll.js"></script>
+            <script type="text/javascript" src="lib/jquery.mobile.iscrollview.js"></script>
+
+  <!-- the various view models -->
+          <script type="text/javascript" src="viewModel/UserViewModel.js"></script>
+         <script type="text/javascript" src="viewModel/ToDoViewModel.js"></script>
+  <!-- the code that puts it all together -->
+        
+         <script src="js/MainApp.js" type="text/javascript"></script>
+ <!-- <script type="text/javascript" src="app.js" ></script> -->
+        
+        
     </head> 
     <body> 
         
-        <div data-role="page" id="home">
-            <div data-role="header">
-                <h1>Hello, World!</h1>
+        <div data-role="page" id="loginView">
+            <div style="border: none;" data-role="header">
+                <h1 style="font-size: 28px;">iFactory</h1>
             </div>
             <div data-role="content">
-                <h1>Welcome to Icenium!</h1>
-                <p>
-                    Icenium&trade; enables you to build cross-platform device applications regardless of your 
-                    development platform by combining the convenience of a local development toolset with the 
-                    power and flexibility of the cloud.
-                </p>
+                <div>
+                 <img border="0" src="images/logo-john-deere.gif" alt="Logo, John Deere" class="logoClass"/>
+                   <div class="space25" ></div>
+                    </div>
+                <form id="loginForm" >
+                    
+                   
+                    <label for="usernameInput">UserName:</label>
+                    <input type="text" name="name" id="usernameInput" data-bind="value: username" style="color:black;" data-mini="true" />
+                     
+                    
+                   
+                    <label for="passwordInput">Password:</label>
+                    <input type="password" name="name" data-bind="value: password" style="color:black;" id="passwordInput" data-mini="true" />
+                   <div class="space40" ></div>
+                  <!-- <a href="#todoPage" data-role="button" data-icon="arrow-r" data-iconpos="right" class="linkSubmit" data-transition="slide">Submit</a> -->
+                    
+                    <input type="submit" id="loginBtn" value="Submit"
+                  data-bind="enable: isEnable, click: onLoginSubmit" />
+                    
+                    
+                   
+                </form>
+                
             </div>
-            <div class="nav">
+          <!--  <div class="nav">
                 <ul data-role="listview">
                     <li><a href="#page1" data-transition="slide">UI Interaction Example</a></li>
                     <li><a href="#page2" data-transition="slide">Geolocation Example</a></li>
                 </ul>
-            </div>
+            </div> data-add-back-btn="true" -->
             <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText">Built with Icenium&trade;</span>
+                <span class="footerText">John Deere&copy;</span>
             </div>
         </div>
         
-        <!-- The following page demonstrates basic user interaction. -->
-        <div data-role="page" id="page1" data-add-back-btn="true">
+          <div data-role="page" id="todoPage" >
             <div data-role="header">
-                <h1>Hello</h1>
+                <div class="svg-menu">
+                  <img src="images/ThreeLinesIcon.svg"/>
+                  <h1><span data-bind="text : user"></span> TODO</h1>
+                </div>
+               
             </div>
             <div data-role="content">
-                <h1>Say Hello!</h1>
-                <div id='helloWorldInput'>
-                    <label for="txtName">Enter your name:</label>
-                    <input type="text" id="txtName" value="" />
+                
+                 <div data-role="fieldcontain">
+                 	<fieldset data-role="controlgroup">
+                		
+                		<input type="checkbox" checked="true" name="checkbox-1" id="checkbox-1" class="custom" />
+                       
+                		<label for="checkbox-1">InSufficent staffing at PT1100</label>
+                         
+                         <input type="checkbox" checked="true" name="checkbox-1" id="checkbox-2" class="custom" />
+                		<label for="checkbox-2">Too Many Quotes at PT110A</label>
+                         
+                         <input type="checkbox" checked="true" name="checkbox-1" id="checkbox-3" class="custom" />
+                		<label for="checkbox-3">Material Shortage at Transmission Line</label>
+                         
+                        
+                         
+                         <input type="checkbox"  checked="true" name="checkbox-1" id="checkbox-4" class="custom" />
+                		<label for="checkbox-4">Poor Efficiency at Engine Line </label>
+                         
+                          <input type="checkbox" checked="true" name="checkbox-1" id="checkbox-5" class="custom" />
+                		<label for="checkbox-5">Voice Memo: Check Clock in Time</label>
+                         
+                         <input type="checkbox" checked="true" name="checkbox-1" id="checkbox-6" class="custom" />
+                		<label for="checkbox-6">New CIPP Report Ready </label>
+                         
+                    </fieldset>
                 </div>
-                <div id='helloWorldText' style="display:block;"></div>
+                
+                               
+                
+               
                 <div align="center">
-                    <div data-role="controlgroup" style="display:inline-block;" data-type="horizontal">
+                 <!--   <div data-role="controlgroup" style="display:inline-block;" data-type="horizontal">
                         <button data-icon="delete" onClick="sayHelloReset();">Reset</button>
                         <button data-theme="a" onClick="sayHello();">Submit</button>
-                    </div>
+                    </div> -->
+                    
+                   
                 </div>
             </div>
-            <div data-role="footer" data-position="fixed"  data-id="oneFooter">
-                <span class="footerText">Built with Icenium&trade;</span>
-            </div>
+            <div data-role="footer" data-position="fixed" class="ui-bar"  data-id="oneFooter">
+                
+                
+                <a href="#" data-role="button">Lines</a>
+                <a href="#">Dept.</a>
+             </div>
         </div>
         
-        <!-- The following page demonstrates how to access device sensors using Apache Callback (aka PhoneGap) -->
-        <div data-role="page" id="page2" data-add-back-btn="true">
-            <div data-role="header">
-                <h1>Geolocation Example</h1>
-            </div>
-            <div data-role="content">
-                <h1>My Location</h1>
-                <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
-                <button data-icon="refresh" onClick="getLocation();">Refresh Location</button>
-                <div id="map_canvas"></div>
-            </div>
-            <div data-role="footer" data-position="fixed" data-id="oneFooter">
-                <span class="footerText">Built with Icenium&trade;</span>
-            </div>
+        
+        <div data-role="page" id="dialog">
+          <div data-role="header">
+            <h1>User Name Required</h1>
+          </div>    
+          <div data-role="content" id="text">
+          </div>    
         </div>
+        
+        
+        
+        
+        
+     
     </body>
     </html>
