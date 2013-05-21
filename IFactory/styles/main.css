@@ -68,6 +68,11 @@ body
 
 }
 
+.ui-btn-hidden {
+    
+    background: red;
+}
+
 
 #loginForm{
     margin-top: 80px;
@@ -92,8 +97,8 @@ body
 .svg-menu img {
   height: 40px;
   float: left;
-    padding-left: 10px;
-    padding-right: 50px;
+    padding-left: 4px;
+    padding-right: 16px;
 }
 
 
