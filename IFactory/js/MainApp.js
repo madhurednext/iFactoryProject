@@ -2,6 +2,16 @@
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
 
+$(document).bind("mobileinit", function() {
+  $("div:jqmData(role='page')").live('pageinit', function() {
+     $("*[data-icontext]").each(function() {
+        var e = $(this).find('.ui-icon'); //span with the ui-icon style
+        var v = $(this).attr('data-icontext');
+        e.text(v);
+     });
+  });
+});
+
 
 ko.virtualElements.allowedBindings.updateListviewOnChange = true;
 ko.bindingHandlers.updateListviewOnChange = {
@@ -38,5 +48,8 @@ function onDeviceReady() {
     ko.applyBindings(toDoViewModel, document.getElementById("todoPage"));
    
    navigator.splashscreen.hide();
+    
+    
 }
+
 

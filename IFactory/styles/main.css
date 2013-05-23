@@ -17,6 +17,12 @@ body
      
  }
 
+
+.ui-panel-content-wrap.ui-body-c.ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-display-reveal.ui-panel-content-wrap-open {
+-webkit-transform: translate3d(6em,0,0);
+    width:100%;
+}
+
  .ui-title{
      
      color: black;
@@ -101,7 +107,31 @@ body
     padding-right: 16px;
 }
 
+.ui-icon-red {
+    background: linear-gradient(#FF0000, #CC0000);
+    background: -webkit-linear-gradient(#FF0000, #CC0000);
+        border:solid 2px #fff;
+    border-radius:30px;
+}
+
 
 .svg-menu h1{
     
+}
+
+.longdiv{
+  width: 75% !important;
+}
+
+.totaldiv {
+    width: 100% !important;
+}
+
+.shortdiv{
+  width: 25% !important;
+}
+.ui-footer {
+    position: absolute !important;
+    bottom: 0;
+    width: 100%;
 }
