@@ -64,10 +64,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="images\people_icon_green.svg" />
     <Content Include="images\icon_settings.png" />
     <Content Include="images\logo-john-deere.gif" />
+    <Content Include="images\people_icon.svg" />
+    <Content Include="images\PersonGreen.png" />
+    <Content Include="images\PersonRed.png" />
     <Content Include="images\settings.svg" />
     <Content Include="images\ThreeLinesIcon.svg" />
+    <Content Include="images\UserGreen.png" />
+    <Content Include="images\UserRed.png" />
     <Content Include="index.html" />
     <Content Include="indexGiven.html" />
     <Content Include="indexSampleVM.html" />
@@ -109,6 +115,13 @@
     <Content Include="viewModelOld\TweetViewModel.js" />
     <Content Include="viewModelOld\TwitterSearchService.js" />
     <Content Include="viewModelOld\TwitterSearchViewModel.js" />
+    <Content Include="viewModel\LineItemViewModel.js" />
+    <Content Include="viewModel\LineSelectionViewModel.js" />
+    <Content Include="viewModel\LinesViewModel.js" />
+    <Content Include="viewModel\mockData.js" />
+    <Content Include="viewModel\PainterViewModel.js" />
+    <Content Include="viewModel\PaintLinesViewModel.js" />
+    <Content Include="viewModel\ResourceViewModel.js" />
     <Content Include="viewModel\ToDoViewModel.js" />
     <Content Include="viewModel\UserViewModel.js" />
   </ItemGroup>

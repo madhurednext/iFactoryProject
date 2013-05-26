@@ -34,10 +34,22 @@ ko.bindingHandlers.updateListviewOnChange = {
   }
 };
 
+var lineTems = [
+ {id : 0, itemName: "PT110A", totalResources : 5, availableResources: 3 },
+ {id : 0, itemName: "PT110B", totalResources : 5, availableResources: 5 },
+ {id : 0, itemName: "PT110C", totalResources : 4, availableResources: 2 },
+ {id : 0, itemName: "PT110D", totalResources : 3, availableResources: 1 }
+           
+];
 
 // create the various view models
 var userViewModel = UserViewModel(),
 toDoViewModel = ToDoViewModel();
+//lineItemViewModel = LineItemViewModel();
+
+lineSelectionViewModel = LineSelectionViewModel();
+
+linesViewModel = LinesViewModel();
 
 $.mobile.defaultPageTransition = "slide";
 
@@ -46,10 +58,38 @@ $.mobile.defaultPageTransition = "slide";
 function onDeviceReady() {
     ko.applyBindings(userViewModel, document.getElementById("loginView"));
     ko.applyBindings(toDoViewModel, document.getElementById("todoPage"));
+    
+     ko.applyBindings(lineSelectionViewModel, document.getElementById("lineselectionpage"));
+     ko.applyBindings(linesViewModel, document.getElementById("LineView"));
    
    navigator.splashscreen.hide();
     
-    
+   afterInitialize();    
 }
+
+function afterInitialize(){
+    
+       var allLinesArray = [];
+    $.each(lineTems, function(index, value) {
+     
+        this['lineItem' + index] = new LineItemViewModel();
+        
+        this['lineItem' + index].id(value.id);
+        
+        this['lineItem' + index].itemName(value.itemName);
+        
+         this['lineItem' + index].totalResources(value.totalResources);
+         this['lineItem' + index].availableResources(value.availableResources);
+        
+        
+         allLinesArray.push(Object.create(this['lineItem' + index]));
+});
+    
+    
+    
+   
+   linesViewModel.totalLineItems(allLinesArray);
+}
+
 
 

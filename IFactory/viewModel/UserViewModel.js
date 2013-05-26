@@ -12,8 +12,17 @@ function UserViewModel() {
     onLoginSubmit = function(){
         
         if(isEnable()) {
-        
+            
             toDoViewModel.user(username());
+            
+            var updateToDoArray= [];
+            var toDoListServiceResultArray = mockData.GetUserToDoList.Data.ToDoList;
+            
+            $.each(toDoListServiceResultArray, function(index, value) {
+               updateToDoArray.push(Object.create(ToDoModel(value)));
+            });
+            
+            toDoViewModel.updateToDoList(updateToDoArray);
             
              $.mobile.changePage("#" + toDoViewModel.template);
         }

@@ -1,10 +1,39 @@
 /*globals ko Revealing Module Pattern*/
 
+
+function ToDoModel(modelObject) {
+    
+    todoId = modelObject.todoId,
+    todoName = modelObject.todoName,
+    dependingItemLineId =  modelObject.dependingItemLineId,
+    dependingListItemId = modelObject.dependingListItemId,
+    enabled =  modelObject.enabled;
+   
+  
+    return {
+        todoId : todoId,
+        todoName : todoName,
+        dependingItemLineId : dependingItemLineId,
+        dependingListItemId : dependingListItemId,
+        enabled : enabled
+        
+        
+    };
+  
+}
+
+
+
+
 function ToDoViewModel() {
 
   template = "todoPage",
   user =  ko.observable(""),
     show = true,
+    onToDoLineClick = function(){
+        
+       //$.mobile.changePage("#" + "lineselectionpage");
+    },
   onSettingsClick = function(){
        if(show) {
               $( "#mypanel" ).panel( "open");
@@ -15,13 +44,64 @@ function ToDoViewModel() {
                 $( "#mypanel" ).panel( "close" );
                  show = true;
                }
-      };
+      },
+    
+    userToDoList= ko.observableArray(),
+    
+    addToDo = function(item){
+        
+        
+        var toDoModel = ToDoModel(item);
+        
+        
+        userToDoList.push(toDoModel);
+    },
+    
+    updateToDoList = function(arrayToDo){
+        
+        userToDoList(arrayToDo);
+        
+    },
+    
+    getToDo = function(id){
+         
+        var result = $.grep(userToDoList, function (e) {
+                        return e.todoId === id;
+                    });
+        return result;
+    },
+     changeToDo = function(id,property,Details){
+        
+        
+         $.grep(userToDoList, function (e) {
+                        if(e.todoId === id) {
+                             e[prop] = Details;
+                         }
+                    });
+        
+    },
+    
+    removeToDo = function(id){
+        
+        userToDoList.remove(function(item) { return item.todoId == id });
+        
+         
+    };
+    
+   
     
     return {
         
         template : template,
         user : user,
-        onSettingsClick : onSettingsClick          
+        onToDoLineClick : onToDoLineClick,
+        onSettingsClick : onSettingsClick,
+        userToDoList : userToDoList,
+        updateToDoList : updateToDoList,
+        addToDo : addToDo,
+        getToDo : getToDo,
+        changeToDo : changeToDo,
+        removeToDo : removeToDo
         
     };
   
