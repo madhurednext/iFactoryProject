@@ -37,14 +37,39 @@
         
          <script src="js/MainApp.js" type="text/javascript"></script>
         
-        <script type="text/html" id="LineItemDisplayTemplate">
+        <script type="text/html" id="PaintLineItemDisplayTemplate">
             
-            <a data-bind="attr: { href: url }, html: imageInside"   data-role="button">
+            <a data-bind="html: imageInside"   data-role="button">
                           
                      
             </a>
                         
         </script>
+        
+        <script type="text/html" id="TransmissionLineItemDisplayTemplate">
+            
+            <a data-bind="text: TransmissionLineName"   data-role="button">
+                          
+                     
+            </a>
+                        
+        </script>
+        
+        
+        
+        
+        
+        
+        <script type="text/html" id="ToDoItemDisplayTemplate">
+            
+            <a data-bind="text: todoName"   data-role="button">
+                          
+                     
+            </a>
+                        
+        </script>
+        
+        
  <!-- <script type="text/javascript" src="app.js" ></script> -->
         
         
@@ -74,7 +99,7 @@
                   <!-- <a href="#todoPage" data-role="button" data-icon="arrow-r" data-iconpos="right" class="linkSubmit" data-transition="slide">Submit</a> -->
                     
                     <input type="submit" id="loginBtn" value="Submit"
-                  data-bind="enable: isEnable, click: onLoginSubmit" />
+                  data-bind="click: onLoginSubmit" />
                     
                     
                    
@@ -106,12 +131,8 @@
                    </ul>
 		  </div>
 				
-							 
-				 
-				  
-				         
-							<div data-role="header">
-								<div class="svg-menu">
+			<div data-role="header">
+					<div class="svg-menu">
                                    
 								  <img src="images/ThreeLinesIcon.svg"  data-bind="click: onSettingsClick"  />
 								  <h1><span data-bind="text : user"></span> ToDo</h1>
@@ -120,23 +141,13 @@
                     		</div>
 							
 							
-							 <div data-role="content"  >
+					 <div data-role="content"   >
 							
-                                 
-                               
-                                <div data-role="controlgroup"data-bind="foreach: userToDoList" >
+                               <div data-role="controlgroup" data-bind="template: { name: 'ToDoItemDisplayTemplate', foreach: userToDoList }" >
                                             
-                                     <a data-bind="text: todoName"   data-role="button">
-                              
-                         
-                                      </a>
-                                     
                                 </div>
-             
-                                 
-								
-								
-							
+                               
+                                
 							 
 							 </div>
 				   
@@ -162,15 +173,43 @@
 </div>
         
         
+      	
+        <div data-role="page" id="lineselectionpage" >
+            <div data-role="header">
+                <a href="#" data-rel="back" data-iconshadow="false" >Back</a>
+                <h3>Line Selection</h3>
+            </div>
+            <div data-role="content">
+                
+                <ul data-role="listview" data-bind="foreach: totalLineItems">
+                    <li data-role="list-divider"></li>
+                    <li data-icon="arrow-r" data-theme="e"><a href="#"  data-bind="text: lineName, style: {color:  anyItemsPending}, click : $parent.onLineClick" ></a></li>
+                </ul>
+            </div>
+              <div data-role="footer" data-position="fixed" class=""  data-id="oneFooter">
+                <div class="ui-grid-a">
+                    <a href="#">
+                	<div class="ui-block-a">
+                        <div class="ui-bar ui-bar-e" style="height:40">Reports </div>
+                     </div></a>
+                    <a href="#sharepage">
+                	<div class="ui-block-b">
+                        <div class="ui-bar ui-bar-e" style="height:40">Share </div>
+                    </div></a>
+                </div>
+             </div>
+        </div>
         
-         <div data-role="page" id="LineView">
+        
+         <div data-role="page" id="LineItemPageView">
              
               <div style="border: none;" data-role="header">
-                <h1 style="font-size: 28px;">Paint Line</h1>
+               <a href="#" data-rel="back" data-iconshadow="false" >Back</a>
+                <h3 data-bind="text: title"> </h3>
             </div>
              
           <div data-role="content">
-                <div data-role="controlgroup"data-bind="template: { name: 'LineItemDisplayTemplate', foreach: totalLineItems }" >
+                <div data-role="controlgroup" data-bind="template: { name: currentTemplate() , foreach: currentListItems }" >
                                             
                 </div>
               </div>
@@ -191,8 +230,9 @@
              
              
          </div>
+                    
+      
         
-         		  
         
     </body>
     </html>

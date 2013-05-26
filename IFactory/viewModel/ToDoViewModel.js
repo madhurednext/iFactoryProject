@@ -29,10 +29,26 @@ function ToDoViewModel() {
 
   template = "todoPage",
   user =  ko.observable(""),
+  userToDoList= ko.observable(),
+  onUserToDoChange = ko.computed(function(){
+      
+      return userToDoList();
+      
+  },this);
     show = true,
     onToDoLineClick = function(){
         
-       //$.mobile.changePage("#" + "lineselectionpage");
+         var lineItemsArray= [];
+            var lineItemServiceResultArray =  mockData.GetUserLines.Data.LineList ;
+ //mockData.GetUserToDoList.Data.ToDoList;
+            
+            $.each(lineItemServiceResultArray, function(index, value) {
+               lineItemsArray.push(LineModel(value));
+            });
+            
+                  
+        linesViewModel.totalLineItems(lineItemsArray);
+       $.mobile.changePage("#" + "lineselectionpage");
     },
   onSettingsClick = function(){
        if(show) {
@@ -46,15 +62,14 @@ function ToDoViewModel() {
                }
       },
     
-    userToDoList= ko.observableArray(),
-    
+  
     addToDo = function(item){
         
         
-        var toDoModel = ToDoModel(item);
+       // var toDoModel = ToDoModel(item);
         
         
-        userToDoList.push(toDoModel);
+        //userToDoList.push(toDoModel);
     },
     
     updateToDoList = function(arrayToDo){
@@ -83,7 +98,7 @@ function ToDoViewModel() {
     
     removeToDo = function(id){
         
-        userToDoList.remove(function(item) { return item.todoId == id });
+       // userToDoList.remove(function(item) { return item.todoId == id });
         
          
     };
@@ -97,6 +112,7 @@ function ToDoViewModel() {
         onToDoLineClick : onToDoLineClick,
         onSettingsClick : onSettingsClick,
         userToDoList : userToDoList,
+        onUserToDoChange : onUserToDoChange,
         updateToDoList : updateToDoList,
         addToDo : addToDo,
         getToDo : getToDo,

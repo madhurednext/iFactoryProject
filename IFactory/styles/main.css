@@ -17,11 +17,27 @@ body
      
  }
 
+#lineselectionpage { background: #367c2b;}
+
+.ui-listview .ui-bar-b {
+    background: #367c2b;
+    border:none;
+}
+
 
 .ui-panel-content-wrap.ui-body-c.ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-display-reveal.ui-panel-content-wrap-open {
 -webkit-transform: translate3d(6em,0,0);
     width:100%;
 }
+
+.colorRed {
+    color : #ff0000;
+}
+
+.colorGreen{
+    color : #00ff00;
+}
+
 
  .ui-title{
      

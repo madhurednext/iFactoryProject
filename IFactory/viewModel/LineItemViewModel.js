@@ -1,19 +1,21 @@
 /*globals ko Revealing Module Pattern*/
 
-function LineItemViewModel() {
-
-  id = ko.observable(0),
-  itemName = ko.observable("PT110A"),
-  url = ko.computed(function(){
-      
-      return "#LineItem" + id(); 
-  },this),
-  
-  totalResources = ko.observable(2),
-  availableResources = ko.observable(1),
+function PaintLineItemModel(modelObject) {
     
-   
-      imageInside = ko.computed(function(){
+    paintLineId = ko.observable(modelObject.paintLineId),
+    paintLineName = ko.observable(modelObject.paintLineName),
+    taskTime = ko.observable(modelObject.taskTime),
+    scheduling = ko.observable(modelObject.scheduling),
+    stage = ko.observable(modelObject.stage),
+    efficiency = ko.observable(modelObject.efficiency),
+    workOrders = ko.observable(modelObject.workOrders),
+    QNotes = ko.observable(modelObject.QNotes),
+    painters = ko.observable(modelObject.painters),
+    requireStaff=  ko.observable(modelObject.requireStaff),
+    availableResources = ko.computed(function(){
+     return   painters().length;
+    },this),
+     imageInside = ko.computed(function(){
           
           
        var greenItem = "<img src='images/PersonGreen.png' border='0' />"  ;
@@ -23,7 +25,7 @@ function LineItemViewModel() {
        
     
           
-         innerHtml += itemName();
+         innerHtml += paintLineName();
           
           innerHtml += "&nbsp;"
       
@@ -36,7 +38,7 @@ function LineItemViewModel() {
         
             
         
-         for (var k = 0, l = (totalResources() - availableResources()) ; k < l; k += 1) {  
+         for (var k = 0, l = (requireStaff() - availableResources()) ; k < l; k += 1) {  
                          
          //  app.iconArray.push(redItem);
               innerHtml += redItem
@@ -48,19 +50,62 @@ function LineItemViewModel() {
        
       
    },this);
-   
-        
-  
+    
     return {
-        
-        id : id,
-        itemName : itemName,
-        url : url,
-        totalResources : totalResources,
+        paintLineId : paintLineId,
+        paintLineName : paintLineName,
+        taskTime : taskTime,
+        scheduling : scheduling,
+        stage : stage,
+        efficiency : efficiency,
+        workOrders : workOrders,
+        QNotes : QNotes,
+        painters : painters,
+        requireStaff : requireStaff,
         availableResources : availableResources,
         imageInside : imageInside
-         
+        
         
     };
   
+}
+
+
+
+
+function TransmissionLineItemModel(modelObject) {
+    
+    TransmissionLineId = ko.observable(modelObject.TransmissionLineId),
+    TransmissionLineName = ko.observable(modelObject.TransmissionLineName),
+    taskTime = ko.observable(modelObject.taskTime),
+    material = ko.observable(modelObject.material);
+   
+    
+    return {
+        TransmissionLineId : TransmissionLineId,
+        TransmissionLineName : TransmissionLineName,
+        taskTime : taskTime,
+        material : material
+        
+    };
+  
+}
+
+
+
+function LineItemViewModel() {
+
+    templateName = '',
+    title = ko.observable(''),
+    currentTemplate = ko.observable('PaintLineItemDisplayTemplate'),
+    currentListItems = ko.observable('');
+    
+    return {
+        templateName : templateName,
+        title : title,
+        currentTemplate : currentTemplate,
+        currentListItems : currentListItems
+    }
+    
+ 
 }

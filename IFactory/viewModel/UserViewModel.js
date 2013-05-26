@@ -19,10 +19,10 @@ function UserViewModel() {
             var toDoListServiceResultArray = mockData.GetUserToDoList.Data.ToDoList;
             
             $.each(toDoListServiceResultArray, function(index, value) {
-               updateToDoArray.push(Object.create(ToDoModel(value)));
+               updateToDoArray.push(ToDoModel(value));
             });
             
-            toDoViewModel.updateToDoList(updateToDoArray);
+            toDoViewModel.userToDoList(updateToDoArray);
             
              $.mobile.changePage("#" + toDoViewModel.template);
         }

@@ -44,12 +44,14 @@ var lineTems = [
 
 // create the various view models
 var userViewModel = UserViewModel(),
-toDoViewModel = ToDoViewModel();
+toDoViewModel = ToDoViewModel(),
+linesViewModel = LinesViewModel(),
+lineItemViewModel = LineItemViewModel(); 
 //lineItemViewModel = LineItemViewModel();
 
-lineSelectionViewModel = LineSelectionViewModel();
+//lineSelectionViewModel = LineSelectionViewModel();
 
-linesViewModel = LinesViewModel();
+
 
 $.mobile.defaultPageTransition = "slide";
 
@@ -58,13 +60,15 @@ $.mobile.defaultPageTransition = "slide";
 function onDeviceReady() {
     ko.applyBindings(userViewModel, document.getElementById("loginView"));
     ko.applyBindings(toDoViewModel, document.getElementById("todoPage"));
+     ko.applyBindings(linesViewModel, document.getElementById("lineselectionpage"));
+     ko.applyBindings(lineItemViewModel, document.getElementById("LineItemPageView"));
     
-     ko.applyBindings(lineSelectionViewModel, document.getElementById("lineselectionpage"));
-     ko.applyBindings(linesViewModel, document.getElementById("LineView"));
+    /* ko.applyBindings(lineSelectionViewModel, document.getElementById("lineselectionpage"));
+     ko.applyBindings(linesViewModel, document.getElementById("LineView"));*/
    
    navigator.splashscreen.hide();
     
-   afterInitialize();    
+  // afterInitialize();    
 }
 
 function afterInitialize(){
