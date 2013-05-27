@@ -68,6 +68,14 @@ function LinesViewModel() {
          // refreshPage("#LineItemPageView");
        }
         
+    },
+    onShareLineClick = function(){
+        
+        $('#sharePopUp').popup();
+        var options = {};
+        options["position-to"] = "popDivHolder";
+        
+        $('#sharePopUp').popup("open", options);
     };
     
     
@@ -77,7 +85,8 @@ function LinesViewModel() {
         template : template,
         totalLineItems : totalLineItems,
         onLineClick  : onLineClick,         
-        selectedLineItem : selectedLineItem
+        selectedLineItem : selectedLineItem,
+        onShareLineClick : onShareLineClick
     };
   
 }
