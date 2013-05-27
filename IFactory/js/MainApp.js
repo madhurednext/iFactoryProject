@@ -46,7 +46,8 @@ var lineTems = [
 var userViewModel = UserViewModel(),
 toDoViewModel = ToDoViewModel(),
 linesViewModel = LinesViewModel(),
-lineItemViewModel = LineItemViewModel(); 
+lineItemViewModel = LineItemViewModel(),
+lineItemDisplayViewModel = LineItemDisplayViewModel();
 //lineItemViewModel = LineItemViewModel();
 
 //lineSelectionViewModel = LineSelectionViewModel();
@@ -62,7 +63,7 @@ function onDeviceReady() {
     ko.applyBindings(toDoViewModel, document.getElementById("todoPage"));
      ko.applyBindings(linesViewModel, document.getElementById("lineselectionpage"));
      ko.applyBindings(lineItemViewModel, document.getElementById("LineItemPageView"));
-    
+    ko.applyBindings(lineItemDisplayViewModel,document.getElementById("LineItemDetailsPageView"));
     /* ko.applyBindings(lineSelectionViewModel, document.getElementById("lineselectionpage"));
      ko.applyBindings(linesViewModel, document.getElementById("LineView"));*/
    

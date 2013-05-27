@@ -15,6 +15,8 @@ function PaintLineItemModel(modelObject) {
     availableResources = ko.computed(function(){
      return   painters().length;
     },this),
+    
+    
      imageInside = ko.computed(function(){
           
           
@@ -98,14 +100,48 @@ function LineItemViewModel() {
     templateName = '',
     title = ko.observable(''),
     currentTemplate = ko.observable('PaintLineItemDisplayTemplate'),
+    onPaintItemDisplayClick = function(selectedItem){
+        
+         
+      lineItemDisplayViewModel.title("Paint Line Details ");
+       lineItemDisplayViewModel.lineDetailHeading(selectedItem.paintLineName());
+         lineItemDisplayViewModel.currentDetailsTemplate('PaintLineItemDetailsDisplayTemplate'); 
+        lineItemDisplayViewModel.currentListDetailItems(selectedItem);
+        
+       $.mobile.changePage("#LineItemDetailsPageView");
+           $("#LineItemDetailsPageView").trigger("create");
+        
+    },
     currentListItems = ko.observable('');
+    
     
     return {
         templateName : templateName,
         title : title,
         currentTemplate : currentTemplate,
+        onPaintItemDisplayClick  : onPaintItemDisplayClick,
         currentListItems : currentListItems
     }
     
  
+}
+
+
+function LineItemDisplayViewModel(){
+     templateName = '',
+    title = ko.observable(''),
+    lineDetailHeading = ko.observable(''),
+    currentDetailsTemplate = ko.observable('PaintLineItemDetailsDisplayTemplate'),
+   
+    currentListDetailItems = ko.observable('');
+    
+    
+    return {
+        templateName : templateName,
+        title : title,
+        lineDetailHeading : lineDetailHeading,
+        currentListDetailItems : currentListDetailItems,
+        currentDetailsTemplate : currentDetailsTemplate
+    }
+    
 }

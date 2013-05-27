@@ -49,6 +49,7 @@ function ToDoViewModel() {
                   
         linesViewModel.totalLineItems(lineItemsArray);
        $.mobile.changePage("#" + "lineselectionpage");
+         $("#lineselectionpage").trigger("create");
     },
   onSettingsClick = function(){
        if(show) {

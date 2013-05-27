@@ -16,6 +16,17 @@ body
  .ui-header {
      
  }
+.ui-controlgroup-controls {
+    background : #ffffff;
+}
+.ui-controlgroup-controls ul {
+padding-left: 9px;
+}
+
+.ui-controlgroup-controls ul li{
+padding-bottom: 10px;
+}
+
 
 #lineselectionpage { background: #367c2b;}
 

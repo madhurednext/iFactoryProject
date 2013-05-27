@@ -39,7 +39,7 @@
         
         <script type="text/html" id="PaintLineItemDisplayTemplate">
             
-            <a data-bind="html: imageInside"   data-role="button">
+            <a data-bind="html: imageInside, click: $parent.onPaintItemDisplayClick"  data-role="button">
                           
                      
             </a>
@@ -55,6 +55,48 @@
                         
         </script>
         
+        
+        
+        <script type="text/html" id="PaintLineItemDetailsDisplayTemplate">
+            
+            <ul>
+            <li>
+            TaskTime : <span data-bind="text: taskTime"  ></span>
+            </li>
+            
+            
+            
+           <li>
+            Stage : <span data-bind="text: stage"  ></span>
+           </li>
+           
+          <li>
+          Scheduling :  <span data-bind="text: scheduling"  ></span>
+          </li>
+           
+            
+           <li>
+           Efficiency :  <span data-bind="text: efficiency"  ></span>
+            </li>
+            
+            
+           <li> 
+           WorkOrders : <span data-bind="text: workOrders"  ></span>
+            </li>
+           
+            
+            
+           <li>
+           QNotes :  <span data-bind="text: QNotes"  ></span>
+           </li>
+           
+            
+          
+          </ul>
+            
+            
+                        
+        </script>
         
         
         
@@ -232,7 +274,37 @@
          </div>
                     
       
-        
+            <div data-role="page" id="LineItemDetailsPageView">
+             
+              <div style="border: none;" data-role="header">
+               <a href="#" data-rel="back" data-iconshadow="false" >Back</a>
+                <h3 data-bind="text: title"> </h3>
+            </div>
+             
+          <div data-role="content">
+                <h3 data-bind="text : lineDetailHeading"></h3>
+                    
+                <div data-role="controlgroup" data-bind="template: { name: currentDetailsTemplate() , foreach: currentListDetailItems }" >
+                                            
+                </div>
+              </div>
+             
+              <div data-role="footer" data-position="fixed" class=""  data-id="oneFooter">
+                <div class="ui-grid-a">
+                    <a href="#">
+                	<div class="ui-block-a">
+                        <div class="ui-bar ui-bar-e" style="height:40">Reports </div>
+                     </div></a>
+                    <a href="#sharepage">
+                	<div class="ui-block-b">
+                        <div class="ui-bar ui-bar-e" style="height:40">Share </div>
+                    </div></a>
+                </div>
+             </div>
+             
+             
+             
+         </div>
         
     </body>
     </html>

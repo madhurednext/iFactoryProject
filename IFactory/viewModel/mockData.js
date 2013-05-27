@@ -51,23 +51,23 @@ mockData.GetPaintLines = { "Data": {
         "PaintLineList": 
             [
                 {paintLineId: 'PaintLine1', paintLineName : 'PT110A', taskTime: '10 mins', 
-                  scheduling: 'Scheduling for PT110A', stage: 'Stage 1 for PT110A', efficiency: '100 % Efficient in PT110A',
+                  scheduling: 'Scheduling for PT110A', stage: '[Stage 1, Stage2]', efficiency: '100 % Efficient in PT110A',
                     workOrders : 'Work Order 1 for PT110A', QNotes : 'Sample QNotes for PT110A',
                    painters: ['Painter11','Painter14'], requireStaff : 4 },
     
                {paintLineId: 'PaintLine2', paintLineName : 'PT110B', taskTime: '6 mins', 
-                  scheduling: 'Scheduling for PT110B', stage: 'Stage 1 for PT110B', efficiency: '100 % Efficient in PT110B',
+                  scheduling: 'Scheduling for PT110B', stage: 'Stage 1, Stage2]', efficiency: '100 % Efficient in PT110B',
                     workOrders : 'Work Order 1 for PT110B', QNotes : 'Sample QNotes for PT110B',
                    painters: ['Painter12','Painter13'] , requireStaff : 2 },
     
     
                  {paintLineId: 'PaintLine3', paintLineName : 'PT110C', taskTime: '21 mins', 
-                  scheduling: 'Scheduling for PT110C', stage: 'Stage 1 for PT110C', efficiency: '100 % Efficient in PT110C',
+                  scheduling: 'Scheduling for PT110C', stage: 'Stage 1, Stage2]', efficiency: '100 % Efficient in PT110C',
                     workOrders : 'Work Order 1 for PT110C', QNotes : 'Sample QNotes for PT110C',
                    painters: ['Painter11','Painter15'], requireStaff : 2 },
     
                  {paintLineId: 'PaintLine4', paintLineName : 'PT110D', taskTime: '12 mins', 
-                  scheduling: 'Scheduling for PT110D', stage: 'Stage 1 for PT110D', efficiency: '100 % Efficient in PT110D',
+                  scheduling: 'Scheduling for PT110D', stage: 'Stage 1, Stage2]', efficiency: '100 % Efficient in PT110D',
                     workOrders : 'Work Order 1 for PT110D', QNotes : 'Sample QNotes for PT110D',
                    painters: ['Painter11','Painter12'], requireStaff : 2 }
     

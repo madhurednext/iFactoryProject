@@ -116,11 +116,9 @@
     <Content Include="viewModelOld\TwitterSearchService.js" />
     <Content Include="viewModelOld\TwitterSearchViewModel.js" />
     <Content Include="viewModel\LineItemViewModel.js" />
-    <Content Include="viewModel\LineSelectionViewModel.js" />
     <Content Include="viewModel\LinesViewModel.js" />
     <Content Include="viewModel\mockData.js" />
     <Content Include="viewModel\PainterViewModel.js" />
-    <Content Include="viewModel\PaintLinesViewModel.js" />
     <Content Include="viewModel\ResourceViewModel.js" />
     <Content Include="viewModel\ToDoViewModel.js" />
     <Content Include="viewModel\UserViewModel.js" />
