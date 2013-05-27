@@ -60,34 +60,34 @@
         <script type="text/html" id="PaintLineItemDetailsDisplayTemplate">
             
             <ul data-role="listview">
-            <li>
-            TaskTime : <span data-bind="text: taskTime"  ></span>
+            <li  data-icon="arrow-r"  >
+           <a> TaskTime : <span data-bind="text: taskTime,attr: { title: taskTime }"  ></span>  </a> 
             </li>
             
             
             
-           <li>
-            Stage : <span data-bind="text: stage"  ></span>
+           <li data-icon="arrow-r" >
+           <a> Stage : <span data-bind="text: stage,attr: { title: stage }"  ></span> </a>
            </li>
            
-          <li>
-          Scheduling :  <span data-bind="text: scheduling"  ></span>
+          <li data-icon="arrow-r" >
+          <a> Scheduling :  <span data-bind="text: scheduling,attr: { title: scheduling }"  ></span> </a>
           </li>
            
             
-           <li>
-           Efficiency :  <span data-bind="text: efficiency"  ></span>
+           <li data-icon="arrow-r"  >
+           <a> Efficiency :  <span data-bind="text: efficiency,attr: { title: efficiency }"  ></span> </a>
             </li>
             
             
-           <li> 
-           WorkOrders : <span data-bind="text: workOrders"  ></span>
+           <li data-icon="arrow-r" > 
+            <a> WorkOrders : <span data-bind="text: workOrders,attr: { title: workOrders }"  ></span> </a>
             </li>
            
             
             
-           <li>
-           QNotes :  <span data-bind="text: QNotes"  ></span>
+           <li data-icon="arrow-r" >
+           <a>QNotes :  <span data-bind="text: QNotes,attr: { title: QNotes }"  ></span> </a>
            </li>
            
             
@@ -284,7 +284,7 @@
           <div data-role="content">
                 <h3 data-bind="text : lineDetailHeading"></h3>
                     
-                <div data-role="controlgroup" data-bind="template: { name: currentDetailsTemplate() , foreach: currentListDetailItems }" >
+                <div  data-bind="template: { name: currentDetailsTemplate() , foreach: currentListDetailItems }" >
                                             
                 </div>
               </div>
