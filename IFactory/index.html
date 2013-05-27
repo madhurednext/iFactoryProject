@@ -196,16 +196,19 @@
 				  
             <div data-role="footer" data-id="todDoFooter">
                 <div class="ui-grid-a">
-                    <a href="#">
-                	<div class="ui-block-a">
-                        <div class="ui-bar ui-bar-e"
-                             data-bind="click: onToDoLineClick"
-                          >Lines </div>
-                     </div></a>
-                    <a href="#sharepage">
+                    
+                    
+                     <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-e" ><a data-bind="click: onToDoLineClick" >Lines</a> </div>
+                     </div>
+                  
+                    
                 	<div class="ui-block-b">
-                        <div class="ui-bar ui-bar-e" >Dept. </div>
-                    </div></a>
+                        <div id=""popDivHolder></div>
+                        <div class="ui-bar ui-bar-e" ><a data-bind="click: onToDoLineClick" >Dept.  </a> </div>
+                    </div>
+                    
+                   
                 </div>
              </div>
            
@@ -217,6 +220,33 @@
         
       	
         <div data-role="page" id="lineselectionpage" >
+            
+            
+                                      <div data-role="popup" id="sharePopUp">
+                                     
+                                      <ul data-role="listview" data-inset="true">
+                                              
+                                              <li data-role="divider" data-theme="a">Share Options</li>
+                                                <li  data-icon="arrow-r"  >
+                                                   <a> Screenshot </a> 
+                                                </li>
+                                              
+                                                <li  data-icon="arrow-r"  >
+                                                   <a> Voice Memo </a> 
+                                                </li>
+                                              
+                                              <li  data-icon="arrow-r"  >
+                                                   <a> Take Picture </a> 
+                                                </li>
+                                              
+                                             <li  data-icon="arrow-r"  >
+                                                   <a href="#NoteDialogPage" data-rel="dialog" data-transition="pop" > Add Note </a> 
+                                                </li>
+                                           </ul>
+                        	             
+                                </div>
+                                    
+            
             <div data-role="header">
                 <a href="#" data-rel="back" data-iconshadow="false" >Back</a>
                 <h3>Line Selection</h3>
@@ -230,24 +260,55 @@
             </div>
               <div data-role="footer" data-position="fixed" class=""  data-id="oneFooter">
                 <div class="ui-grid-a">
-                    <a href="#">
+                    
                 	<div class="ui-block-a">
-                        <div class="ui-bar ui-bar-e" style="height:40">Reports </div>
-                     </div></a>
+                        <div class="ui-bar ui-bar-e" style="height:40"><a href="#">Reports</a> </div>
+                     </div>
                   
-                    <a >
+                    
                 	<div class="ui-block-b">
                         <div id=""popDivHolder></div>
-                        <div data-bind="click: onShareLineClick" class="ui-bar ui-bar-e" style="height:40">Share </div>
+                        <div class="ui-bar ui-bar-e" style="height:40"><a href="#sharePopUp" data-rel="popup" >Share  </a> </div>
                     </div>
                         
-                    </a>
+                   
                 </div>
              </div>
+            
+          
+            
+            
         </div>
        
         
          <div data-role="page" id="LineItemPageView">
+             
+             
+               <div data-role="popup" id="sharePopUp">
+                                     
+                                      <ul data-role="listview" data-inset="true">
+                                              
+                                              <li data-role="divider" data-theme="a">Share Options</li>
+                                                <li  data-icon="arrow-r"  >
+                                                   <a> Screenshot </a> 
+                                                </li>
+                                              
+                                                <li  data-icon="arrow-r"  >
+                                                   <a> Voice Memo </a> 
+                                                </li>
+                                              
+                                              <li  data-icon="arrow-r"  >
+                                                   <a> Take Picture </a> 
+                                                </li>
+                                              
+                                               <li  data-icon="arrow-r"  >
+                                                   <a href="#NoteDialogPage" data-rel="dialog" data-transition="pop" > Add Note </a> 
+                                                </li>
+                                           </ul>
+                        	             
+                                </div>
+             
+             
              
               <div style="border: none;" data-role="header">
                <a href="#" data-rel="back" data-iconshadow="false" >Back</a>
@@ -262,14 +323,17 @@
              
               <div data-role="footer" data-position="fixed" class=""  data-id="oneFooter">
                 <div class="ui-grid-a">
-                    <a href="#">
-                	<div class="ui-block-a">
-                        <div class="ui-bar ui-bar-e" style="height:40">Reports </div>
-                     </div></a>
-                    <a href="#sharePopUp" data-rel="popup">
+                    
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-e" style="height:40"><a href="#">Reports</a> </div>
+                     </div>
+                  
+                    
                 	<div class="ui-block-b">
-                        <div class="ui-bar ui-bar-e" style="height:40">Share </div>
-                    </div></a>
+                       
+                        <div class="ui-bar ui-bar-e" style="height:40"><a href="#sharePopUp" data-rel="popup" >Share  </a> </div>
+                    </div>
+                  
                 </div>
              </div>
              
@@ -292,17 +356,45 @@
                                             
                 </div>
               </div>
+                
+                  <div data-role="popup" id="sharePopUp">
+                                     
+                                      <ul data-role="listview" data-inset="true">
+                                              
+                                              <li data-role="divider" data-theme="a">Share Options</li>
+                                                <li  data-icon="arrow-r"  >
+                                                   <a> Screenshot </a> 
+                                                </li>
+                                              
+                                                <li  data-icon="arrow-r"  >
+                                                   <a> Voice Memo </a> 
+                                                </li>
+                                              
+                                              <li  data-icon="arrow-r"  >
+                                                   <a> Take Picture </a> 
+                                                </li>
+                                              
+                                              <li  data-icon="arrow-r"  >
+                                                   <a href="#NoteDialogPage" data-rel="dialog" data-transition="pop" > Add Note </a> 
+                                                </li>
+                                           </ul>
+                        	             
+                                </div>
+            
              
               <div data-role="footer" data-position="fixed" class=""  data-id="oneFooter">
                 <div class="ui-grid-a">
-                    <a href="#">
-                	<div class="ui-block-a">
-                        <div class="ui-bar ui-bar-e" style="height:40">Reports </div>
-                     </div></a>
-                    <a href="#sharePopUp" data-rel="popup">
+                    
+                     <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-e" style="height:40"><a href="#">Reports</a> </div>
+                     </div>
+                  
+                    
                 	<div class="ui-block-b">
-                        <div class="ui-bar ui-bar-e" style="height:40">Share </div>
-                    </div></a>
+                        
+                        <div class="ui-bar ui-bar-e" style="height:40"><a href="#sharePopUp" data-rel="popup" >Share  </a> </div>
+                    </div>
+                    
                 </div>
              </div>
              
@@ -311,29 +403,67 @@
          </div>
         
         
-         <div data-role="popup" id="sharePopUp">
+        
+        <div data-role="page" id="NoteDialogPage">
              
-              <ul data-role="listview" data-inset="true">
-                      
-                      <li data-role="divider" data-theme="a">Share Options</li>
-                        <li  data-icon="arrow-r"  >
-                           <a> Screenshot </a> 
-                        </li>
-                      
-                        <li  data-icon="arrow-r"  >
-                           <a> Voice Memo </a> 
-                        </li>
-                      
-                      <li  data-icon="arrow-r"  >
-                           <a> Take Picture </a> 
-                        </li>
-                      
-                      <li  data-icon="arrow-r"  >
-                           <a> Add Note </a> 
-                        </li>
-                   </ul>
-	             
-        </div>
+             
+             <div data-position="fixed" id="name" data-role="header"> 
+                 <a data-rel="back" data-icon="delete" data-iconpos="notext">Close</a>
+                  <h1 class="heading" id="name">Send Note</h1>
+              </div>
+                         
+            
+             <div data-role="content">
+                  <form>
+                     <label for="toPersonName"></label>
+                     <input name="toPersonName" id="toPerson" placeholder="To" value="" style="color: black;" type="text">
+                
+                    <label for="textarea-1"></label>
+                    <textarea cols="40" style="height:200px;color: black;" rows="16" placeholder="Note" name="textarea-1" id="notesTextArea"></textarea>
+                </form>
+  
+  
+   
+             </div>
+            
+            
+            <div data-role="popup" id="SendPopUp"   class="ui-corner-all">
+        			<div data-role="header" data-theme="a" class="ui-corner-top">
+        				<h1>Seng Notes SuccessFully!</h1>
+        			</div>
+        			<div data-role="content" data-theme="d" style="height:200px;" class="ui-corner-bottom ui-content">
+        				
+                                              
+        				<p >Notes Saved Success Fully</p>
+        				<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a>    
+        				
+        			</div>
+		    </div>
+            
+            <div data-role="footer" data-position="fixed" data-id="oneFooter">
+                <div class="ui-grid-a">
+                    
+                     <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-e" style="height:40"><a href="#">Attach Picture</a> </div>
+                     </div>
+                  
+                    
+                	<div class="ui-block-b">
+                       <div class="ui-bar ui-bar-e" style="height:40"><a href="#SendPopUp" data-rel="popup" >Send  </a> </div>
+                    </div>
+                    
+                </div>
+             </div>
+            
+            
+             
+             
+     
+             
+             
+             
+         </div>
+         
         
         
 
